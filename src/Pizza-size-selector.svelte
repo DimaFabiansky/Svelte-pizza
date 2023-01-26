@@ -14,7 +14,7 @@
       }
     });
 
-    return (33.3333 * value).toString() + "%";
+    return (33.333 * value).toString() + "%";
   }
 
   onMount(function () {
@@ -28,18 +28,20 @@
   <div class="type" />
 
   <div class="size">
-    <span class="window" style="left" : {windowPosition} />
-    <label>
-      <input type="radio" bind:group={selectedValue} name="size" value="1" />
-      20 см
-    </label>
-    <label>
-      <input type="radio" bind:group={selectedValue} name="size" value="2" />
-      30 см
-    </label>
-    <label>
-      <input type="radio" bind:group={selectedValue} name="size" value="3" />
-      40 см
-    </label>
+    {#if size.length > 0}
+      <span class="window" style="left: {windowPosition};" />
+    {/if}
+
+    {#each size as item}
+      <label>
+        <input
+          type="radio"
+          bind:group={selectedValue}
+          name="size"
+          value={item.value}
+        />
+        {item.name}
+      </label>
+    {/each}
   </div>
 </div>

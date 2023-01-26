@@ -1,5 +1,4 @@
 <script>
-  import { each } from "svelte/internal";
   import Header from "./Header.svelte";
   import PizzaCart from "./Pizza-Cart.svelte";
 
@@ -23,10 +22,11 @@
         },
       ],
     },
+
     {
       image: "/img/Pizza-img/pizza-two.jpg",
-      name: "Pizza-two",
-      price: 300,
+      name: "Сирна",
+      price: 450,
       size: [
         {
           name: "20 см",
@@ -42,10 +42,11 @@
         },
       ],
     },
+
     {
       image: "/img/Pizza-img/pizza-three.jpg",
-      name: "Pizza-two",
-      price: 300,
+      name: "Креветки по-азіатськи",
+      price: 290,
       size: [
         {
           name: "20 см",
@@ -61,10 +62,11 @@
         },
       ],
     },
+
     {
       image: "/img/Pizza-img/pizza-four.jpg",
-      name: "Pizza-two",
-      price: 300,
+      name: "Сирна з куркою",
+      price: 385,
       size: [
         {
           name: "20 см",
@@ -80,10 +82,11 @@
         },
       ],
     },
+
     {
       image: "/img/Pizza-img/pizza-one.jpg",
-      name: "Pizza-two",
-      price: 300,
+      name: "Чізбургер-піца",
+      price: 395,
       size: [
         {
           name: "20 см",
@@ -99,10 +102,11 @@
         },
       ],
     },
+
     {
       image: "/img/Pizza-img/pizza-two.jpg",
-      name: "Pizza-two",
-      price: 300,
+      name: "Сирна",
+      price: 450,
       size: [
         {
           name: "20 см",
@@ -118,10 +122,11 @@
         },
       ],
     },
+
     {
       image: "/img/Pizza-img/pizza-three.jpg",
-      name: "Pizza-two",
-      price: 300,
+      name: "Креветки по-азіатськи",
+      price: 290,
       size: [
         {
           name: "20 см",
@@ -137,10 +142,11 @@
         },
       ],
     },
+
     {
       image: "/img/Pizza-img/pizza-four.jpg",
-      name: "Pizza-two",
-      price: 300,
+      name: "Сирна з куркою",
+      price: 385,
       size: [
         {
           name: "20 см",
