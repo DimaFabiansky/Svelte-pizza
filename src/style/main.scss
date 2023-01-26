@@ -1,0 +1,139 @@
+$grey-color: #7B7B7B;
+$light-grey-color:#F3F3F3;
+
+$orange-color: #FE5F1E;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: sans-serif;
+}
+
+@import '_button.scss';
+
+html {
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// Header
+header {
+    padding: 30px;
+
+    .container {
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        .img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .text {
+
+            .name {
+                font-size: 1.3rem;
+                font-weight: 900;
+                margin-bottom: 5px;
+            }
+
+            .description {
+                color: $grey-color;
+            }
+        }
+    }
+}
+
+// Pizza-cart
+.pizza-cart {
+    display: flex;
+    flex-direction: column;
+
+    .img {
+        width: 260px;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .name {
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .price-block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .price {
+            font-size: 1.3rem;
+            text-align: center;
+        }
+    }
+
+    .selector {
+        margin: 0 0 15px;
+        padding: 7px 6px;
+        border-radius: 20px;
+        background-color: $light-grey-color;
+
+        .size, .type {
+            position: relative;
+            display: flex;
+
+            span.window {
+                z-index: 0;
+                top: -3px;
+                position: absolute;
+                display: inline-block;
+                background-color: #ffffff;
+                width: 30%;
+                height: 100%;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.64);
+
+                transition: left .2s;
+            }
+
+            label {
+                cursor: pointer;
+                display: inline-block;
+                z-index: 1;
+                width: 30%;
+
+                input {
+                    display: none;
+                }
+
+                font-size: 1.3rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+section#menu {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .pizza-cart {
+        width: 25%;
+        padding: 20px;
+    }
+}

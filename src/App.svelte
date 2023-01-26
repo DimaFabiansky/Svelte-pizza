@@ -1,0 +1,172 @@
+<script>
+  import { each } from "svelte/internal";
+  import Header from "./Header.svelte";
+  import PizzaCart from "./Pizza-Cart.svelte";
+
+  let arrayPizza = [
+    {
+      image: "/img/Pizza-img/pizza-one.jpg",
+      name: "Чізбургер-піца",
+      price: 395,
+      size: [
+        {
+          name: "20 см",
+          value: 20,
+        },
+        {
+          name: "30 см",
+          value: 30,
+        },
+        {
+          name: "40 см",
+          value: 40,
+        },
+      ],
+    },
+    {
+      image: "/img/Pizza-img/pizza-two.jpg",
+      name: "Pizza-two",
+      price: 300,
+      size: [
+        {
+          name: "20 см",
+          value: 20,
+        },
+        {
+          name: "30 см",
+          value: 30,
+        },
+        {
+          name: "40 см",
+          value: 40,
+        },
+      ],
+    },
+    {
+      image: "/img/Pizza-img/pizza-three.jpg",
+      name: "Pizza-two",
+      price: 300,
+      size: [
+        {
+          name: "20 см",
+          value: 20,
+        },
+        {
+          name: "30 см",
+          value: 30,
+        },
+        {
+          name: "40 см",
+          value: 40,
+        },
+      ],
+    },
+    {
+      image: "/img/Pizza-img/pizza-four.jpg",
+      name: "Pizza-two",
+      price: 300,
+      size: [
+        {
+          name: "20 см",
+          value: 20,
+        },
+        {
+          name: "30 см",
+          value: 30,
+        },
+        {
+          name: "40 см",
+          value: 40,
+        },
+      ],
+    },
+    {
+      image: "/img/Pizza-img/pizza-one.jpg",
+      name: "Pizza-two",
+      price: 300,
+      size: [
+        {
+          name: "20 см",
+          value: 20,
+        },
+        {
+          name: "30 см",
+          value: 30,
+        },
+        {
+          name: "40 см",
+          value: 40,
+        },
+      ],
+    },
+    {
+      image: "/img/Pizza-img/pizza-two.jpg",
+      name: "Pizza-two",
+      price: 300,
+      size: [
+        {
+          name: "20 см",
+          value: 20,
+        },
+        {
+          name: "30 см",
+          value: 30,
+        },
+        {
+          name: "40 см",
+          value: 40,
+        },
+      ],
+    },
+    {
+      image: "/img/Pizza-img/pizza-three.jpg",
+      name: "Pizza-two",
+      price: 300,
+      size: [
+        {
+          name: "20 см",
+          value: 20,
+        },
+        {
+          name: "30 см",
+          value: 30,
+        },
+        {
+          name: "40 см",
+          value: 40,
+        },
+      ],
+    },
+    {
+      image: "/img/Pizza-img/pizza-four.jpg",
+      name: "Pizza-two",
+      price: 300,
+      size: [
+        {
+          name: "20 см",
+          value: 20,
+        },
+        {
+          name: "30 см",
+          value: 30,
+        },
+        {
+          name: "40 см",
+          value: 40,
+        },
+      ],
+    },
+  ];
+</script>
+
+<!-- Header -->
+<Header />
+
+<!-- Pizza-cart -->
+<section id="menu">
+  <div class="container">
+    {#each arrayPizza as pizza}
+      <PizzaCart {...pizza} />
+    {/each}
+  </div>
+</section>

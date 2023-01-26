@@ -1,0 +1,12 @@
+.button {
+
+    &.orange {
+        background-color: $orange-color;
+        color: #ffffff;
+        font-size: 1.3rem;
+        font-weight: 600;
+        padding: 15px 23px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+}
