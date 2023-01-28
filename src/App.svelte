@@ -9,16 +9,26 @@
       price: 395,
       size: [
         {
-          name: "20 см",
-          value: 20,
+          name: "26 см.",
+          value: 26,
         },
         {
-          name: "30 см",
+          name: "30 см.",
           value: 30,
         },
         {
-          name: "40 см",
+          name: "40 см.",
           value: 40,
+        },
+      ],
+      type: [
+        {
+          name: "тонке",
+          value: 1,
+        },
+        {
+          name: "традиційне",
+          value: 2,
         },
       ],
     },
@@ -29,16 +39,26 @@
       price: 450,
       size: [
         {
-          name: "20 см",
-          value: 20,
+          name: "26 см.",
+          value: 26,
         },
         {
-          name: "30 см",
+          name: "30 см.",
           value: 30,
         },
         {
-          name: "40 см",
+          name: "40 см.",
           value: 40,
+        },
+      ],
+      type: [
+        {
+          name: "тонке",
+          value: 1,
+        },
+        {
+          name: "традиційне",
+          value: 2,
         },
       ],
     },
@@ -49,16 +69,26 @@
       price: 290,
       size: [
         {
-          name: "20 см",
-          value: 20,
+          name: "26 см.",
+          value: 26,
         },
         {
-          name: "30 см",
+          name: "30 см.",
           value: 30,
         },
         {
-          name: "40 см",
+          name: "40 см.",
           value: 40,
+        },
+      ],
+      type: [
+        {
+          name: "тонке",
+          value: 1,
+        },
+        {
+          name: "традиційне",
+          value: 2,
         },
       ],
     },
@@ -69,16 +99,26 @@
       price: 385,
       size: [
         {
-          name: "20 см",
-          value: 20,
+          name: "26 см.",
+          value: 26,
         },
         {
-          name: "30 см",
+          name: "30 см.",
           value: 30,
         },
         {
-          name: "40 см",
+          name: "40 см.",
           value: 40,
+        },
+      ],
+      type: [
+        {
+          name: "тонке",
+          value: 1,
+        },
+        {
+          name: "традиційне",
+          value: 2,
         },
       ],
     },
@@ -89,16 +129,26 @@
       price: 395,
       size: [
         {
-          name: "20 см",
-          value: 20,
+          name: "26 см.",
+          value: 26,
         },
         {
-          name: "30 см",
+          name: "30 см.",
           value: 30,
         },
         {
-          name: "40 см",
+          name: "40 см.",
           value: 40,
+        },
+      ],
+      type: [
+        {
+          name: "тонке",
+          value: 1,
+        },
+        {
+          name: "традиційне",
+          value: 2,
         },
       ],
     },
@@ -109,16 +159,26 @@
       price: 450,
       size: [
         {
-          name: "20 см",
-          value: 20,
+          name: "26 см.",
+          value: 26,
         },
         {
-          name: "30 см",
+          name: "30 см.",
           value: 30,
         },
         {
-          name: "40 см",
+          name: "40 см.",
           value: 40,
+        },
+      ],
+      type: [
+        {
+          name: "тонке",
+          value: 1,
+        },
+        {
+          name: "традиційне",
+          value: 2,
         },
       ],
     },
@@ -129,16 +189,26 @@
       price: 290,
       size: [
         {
-          name: "20 см",
-          value: 20,
+          name: "26 см.",
+          value: 26,
         },
         {
-          name: "30 см",
+          name: "30 см.",
           value: 30,
         },
         {
-          name: "40 см",
+          name: "40 см.",
           value: 40,
+        },
+      ],
+      type: [
+        {
+          name: "тонке",
+          value: 1,
+        },
+        {
+          name: "традиційне",
+          value: 2,
         },
       ],
     },
@@ -149,16 +219,26 @@
       price: 385,
       size: [
         {
-          name: "20 см",
-          value: 20,
+          name: "26 см.",
+          value: 26,
         },
         {
-          name: "30 см",
+          name: "30 см.",
           value: 30,
         },
         {
-          name: "40 см",
+          name: "40 см.",
           value: 40,
+        },
+      ],
+      type: [
+        {
+          name: "тонке",
+          value: 1,
+        },
+        {
+          name: "традиційне",
+          value: 2,
         },
       ],
     },

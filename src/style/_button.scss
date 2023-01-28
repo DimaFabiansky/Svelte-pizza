@@ -9,4 +9,15 @@
         border-radius: 30px;
         cursor: pointer;
     }
+
+    &.pizza {
+        background-color: #ffffff;
+        color: $button-border;
+        padding: 14px 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1rem;
+        border: 1px solid $button-border;
+    }
 }

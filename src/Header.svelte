@@ -6,7 +6,7 @@
   <div class="container">
     <div class="logo">
       <div class="img">
-        <img src="/img/img-logo.png" alt="logo-pizza" />
+        <img src="/img/img-logo.svg" alt="logo-pizza" />
       </div>
       <div class="text">
         <div class="name">Svelte Pizza</div>
@@ -14,7 +14,9 @@
       </div>
     </div>
     <div class="card-button">
-      <Button>$000</Button>
+      <Button>0 грн</Button>
     </div>
   </div>
+
+  <hr />
 </header>
