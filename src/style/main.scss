@@ -3,6 +3,7 @@ $light-grey-color:#F3F3F3;
 $orange-color: #FE5F1E;
 $hr-color: #F7F7F7;
 $button-border: #EB5A1E;
+$button-black: #282828;
 
 // @font-face {
 // 	font-family: 'Proxima Nova Regular';
@@ -155,9 +156,79 @@ header {
     }
 }
 
+.filter-list {
+
+    label {
+
+        margin-right: 10px;
+
+        input {
+            display: none;
+
+            &:checked + span {
+                background-color: $button-black;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.sorter-list {
+    position: relative;
+
+    .selected {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $button-black;
+
+        span.name {
+            margin-left: 5px;
+            font-weight: 400;
+            color: $orange-color;
+            text-decoration: underline dashed;
+            cursor: pointer;
+        }
+    }
+
+    .list {
+        margin-top: 10px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 100%;
+        background-color: #ffffff;
+        padding: 18px 0;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+
+        ul {
+            li {
+                display: block;
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: $button-black;
+                padding: 10px 14px;
+                cursor: pointer;
+                transition: all .2s;
+
+                &:hover, &.active {
+                    background-color: #FE5F1E0D;
+                    color: $orange-color;
+                }
+            }
+        }
+    }
+}
+
 section#menu {
+
     .container {
         flex-wrap: wrap;
+
+        &.filter {
+            padding: 30px 0;
+            justify-content: space-between;
+        }
     }
 
     .pizza-cart {

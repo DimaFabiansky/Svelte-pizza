@@ -1,248 +1,79 @@
 <script>
+  import { onMount } from "svelte";
+  import FiltrationList from "./FiltrationList.svelte";
   import Header from "./Header.svelte";
   import PizzaCart from "./Pizza-Cart.svelte";
+  import SorterList from "./SorterList.svelte";
+  import axios from "axios";
 
-  let arrayPizza = [
+  let url = "http://localhost:3000/pizzas";
+
+  let arrayPizza = [];
+
+  let arrayFilter = [
     {
-      image: "/img/Pizza-img/pizza-one.jpg",
-      name: "Чізбургер-піца",
-      price: 395,
-      size: [
-        {
-          name: "26 см.",
-          value: 26,
-        },
-        {
-          name: "30 см.",
-          value: 30,
-        },
-        {
-          name: "40 см.",
-          value: 40,
-        },
-      ],
-      type: [
-        {
-          name: "тонке",
-          value: 1,
-        },
-        {
-          name: "традиційне",
-          value: 2,
-        },
-      ],
+      name: "Всі",
+      value: "",
     },
-
     {
-      image: "/img/Pizza-img/pizza-two.jpg",
-      name: "Сирна",
-      price: 450,
-      size: [
-        {
-          name: "26 см.",
-          value: 26,
-        },
-        {
-          name: "30 см.",
-          value: 30,
-        },
-        {
-          name: "40 см.",
-          value: 40,
-        },
-      ],
-      type: [
-        {
-          name: "тонке",
-          value: 1,
-        },
-        {
-          name: "традиційне",
-          value: 2,
-        },
-      ],
+      name: "М'ясні",
+      value: "0",
     },
-
     {
-      image: "/img/Pizza-img/pizza-three.jpg",
-      name: "Креветки по-азіатськи",
-      price: 290,
-      size: [
-        {
-          name: "26 см.",
-          value: 26,
-        },
-        {
-          name: "30 см.",
-          value: 30,
-        },
-        {
-          name: "40 см.",
-          value: 40,
-        },
-      ],
-      type: [
-        {
-          name: "тонке",
-          value: 1,
-        },
-        {
-          name: "традиційне",
-          value: 2,
-        },
-      ],
+      name: "Вегетеріанські",
+      value: "1",
     },
-
     {
-      image: "/img/Pizza-img/pizza-four.jpg",
-      name: "Сирна з куркою",
-      price: 385,
-      size: [
-        {
-          name: "26 см.",
-          value: 26,
-        },
-        {
-          name: "30 см.",
-          value: 30,
-        },
-        {
-          name: "40 см.",
-          value: 40,
-        },
-      ],
-      type: [
-        {
-          name: "тонке",
-          value: 1,
-        },
-        {
-          name: "традиційне",
-          value: 2,
-        },
-      ],
+      name: "Гриль",
+      value: "2",
     },
-
     {
-      image: "/img/Pizza-img/pizza-one.jpg",
-      name: "Чізбургер-піца",
-      price: 395,
-      size: [
-        {
-          name: "26 см.",
-          value: 26,
-        },
-        {
-          name: "30 см.",
-          value: 30,
-        },
-        {
-          name: "40 см.",
-          value: 40,
-        },
-      ],
-      type: [
-        {
-          name: "тонке",
-          value: 1,
-        },
-        {
-          name: "традиційне",
-          value: 2,
-        },
-      ],
+      name: "Гострі",
+      value: "3",
     },
-
     {
-      image: "/img/Pizza-img/pizza-two.jpg",
-      name: "Сирна",
-      price: 450,
-      size: [
-        {
-          name: "26 см.",
-          value: 26,
-        },
-        {
-          name: "30 см.",
-          value: 30,
-        },
-        {
-          name: "40 см.",
-          value: 40,
-        },
-      ],
-      type: [
-        {
-          name: "тонке",
-          value: 1,
-        },
-        {
-          name: "традиційне",
-          value: 2,
-        },
-      ],
-    },
-
-    {
-      image: "/img/Pizza-img/pizza-three.jpg",
-      name: "Креветки по-азіатськи",
-      price: 290,
-      size: [
-        {
-          name: "26 см.",
-          value: 26,
-        },
-        {
-          name: "30 см.",
-          value: 30,
-        },
-        {
-          name: "40 см.",
-          value: 40,
-        },
-      ],
-      type: [
-        {
-          name: "тонке",
-          value: 1,
-        },
-        {
-          name: "традиційне",
-          value: 2,
-        },
-      ],
-    },
-
-    {
-      image: "/img/Pizza-img/pizza-four.jpg",
-      name: "Сирна з куркою",
-      price: 385,
-      size: [
-        {
-          name: "26 см.",
-          value: 26,
-        },
-        {
-          name: "30 см.",
-          value: 30,
-        },
-        {
-          name: "40 см.",
-          value: 40,
-        },
-      ],
-      type: [
-        {
-          name: "тонке",
-          value: 1,
-        },
-        {
-          name: "традиційне",
-          value: 2,
-        },
-      ],
+      name: "Закриті",
+      value: "4",
     },
   ];
+
+  let selectFilter = arrayFilter[0].value;
+
+  let selectSort = 0;
+
+  $: updatePizzas(selectFilter, selectSort);
+
+  function updatePizzas(filter, sort) {
+    let newUrl = url;
+    if (selectFilter !== "") {
+      newUrl += "?category=" + filter;
+    }
+
+    let partl = "&";
+    if (selectFilter == "") {
+      partl = "?";
+    }
+    switch (selectSort) {
+      case 0:
+        newUrl += partl + "_sort=rating&_order=desc";
+        break;
+    }
+
+    axios({
+      method: "get",
+      url: newUrl,
+    })
+      .then((response) => {
+        arrayPizza = response.data;
+      })
+      .catch((e) => {
+        console.warn(e);
+      });
+  }
+
+  function getSorter(e) {
+    selectSort = e.detail.value;
+  }
 </script>
 
 <!-- Header -->
@@ -250,8 +81,13 @@
 
 <!-- Pizza-cart -->
 <section id="menu">
+  <div class="container filter">
+    <FiltrationList arrayList={arrayFilter} bind:selectFilter />
+    <SorterList on:select={getSorter} />
+  </div>
+
   <div class="container">
-    {#each arrayPizza as pizza}
+    {#each arrayPizza as pizza (pizza.id)}
       <PizzaCart {...pizza} />
     {/each}
   </div>

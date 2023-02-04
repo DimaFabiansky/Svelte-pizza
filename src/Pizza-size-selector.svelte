@@ -2,9 +2,8 @@
   import { onMount } from "svelte";
 
   export let size = [];
-  // export let type = [];
 
-  let selectedValue = size[0].value;
+  let selectedValue = "1";
 
   $: windowPosition = getPosition(selectedValue);
 
