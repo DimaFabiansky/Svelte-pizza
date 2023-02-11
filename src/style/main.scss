@@ -5,20 +5,12 @@ $hr-color: #F7F7F7;
 $button-border: #EB5A1E;
 $button-black: #282828;
 
-// @font-face {
-// 	font-family: 'Proxima Nova Regular';
-// 	src: url('../assets/Fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Regular.eot');
-// 	src: local('☺'), url('../assets/Fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Regular.woff') format('woff'), url('../assets/Fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Regular.ttf') format('truetype');
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: none;
-    font-family: sans-serif;
+    font-family: 'Proxima Nova Regular', sans-serif;
 }
 
 @import '_button.scss';
@@ -52,13 +44,9 @@ header {
             width: 38px;
             height: 38px;
             object-fit:contain;
-            text-align: center;
-            display: flex;
         }
 
         .text {
-            display: inline-block;
-
             .name {
                 font-size: 1.5rem;
                 font-weight: 900;
@@ -72,6 +60,13 @@ header {
                 font-weight: 400;
                 letter-spacing: 1px;
             }
+        }
+    }
+
+    .card-button {
+
+        a.button.orange {
+            text-decoration: none;
         }
     }
 
@@ -159,7 +154,6 @@ header {
 .filter-list {
 
     label {
-
         margin-right: 10px;
 
         input {
@@ -177,7 +171,7 @@ header {
     position: relative;
 
     .selected {
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 700;
         color: $button-black;
 
@@ -220,7 +214,7 @@ header {
     }
 }
 
-section#menu {
+section#main {
 
     .container {
         flex-wrap: wrap;
@@ -235,5 +229,138 @@ section#menu {
         width: 25%;
         padding: 35px;
         text-align: center;
+    }
+}
+
+section#cart {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.2;
+            color: #777777;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            margin-top: 40px;
+        }
+    }
+
+    .container.list {
+        .header {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #bcbcbc;
+
+            .title {
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            .delete-all {
+                font-size: 1.1rem;
+                color: $grey-color;
+                cursor: pointer;
+            }
+        }
+
+        .list {
+            width: 80%;
+            margin: 10px auto;
+
+            .item {
+               padding: 20px 10px;
+               display: flex;
+               align-items: center;
+               width: 100%;
+
+               .image {
+                  width: 80px;
+                  height: 80px;
+                  margin-right: 10px;
+
+                  img {
+                     width: 100%;
+                     height: 100%;
+                     object-fit: contain;
+                     object-position: center;
+                  }
+               }
+
+               .info {
+                  .name {
+                     font-size: 1.3rem;
+                     font-weight: 700;
+                  }
+
+                  .type {
+                     font-size: 1.1rem;
+                     color: $grey-color;
+                  }
+               }
+
+               .number {
+                  margin: 0 auto;
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+
+                  div {
+                     min-width: 20px;
+                     min-height: 20px;
+                     text-align: center;
+                     font-size: 1.4rem;
+                     font-weight: 700;
+
+                     &.button {
+                        margin-top: 0;
+                        color: $orange-color;
+                        cursor: pointer;
+                     }
+                  }
+               }
+
+               .price {
+                  margin: 0 auto;
+                  font-size: 1.3rem;
+                  font-weight: 700;
+               }
+
+               .delete {
+                  color: $grey-color;
+                  font-size: 1.4rem;
+                  cursor: pointer;
+               }
+            }
+         }
+
+         .button {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 10px;
+
+            a.button.black {
+                text-decoration: none;
+            }
+         }
     }
 }

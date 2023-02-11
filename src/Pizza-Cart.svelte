@@ -1,13 +1,45 @@
 <script>
   import { onMount } from "svelte";
   import PizzaSizeSelector from "./Pizza-size-selector.svelte";
+  import { cart } from "./store/store.js";
+  import { onDestroy } from "svelte";
 
   export let imageUrl = "";
   export let name = "Pizza";
   export let price = 100;
   export let sizes = [];
 
+  let selectSize = "1";
+
   let formatedSize = [];
+
+  let cartList;
+  let unsub = cart.subscribe((value) => {
+    cartList = value;
+  });
+
+  function buyPizza() {
+    let newPizza = {
+      name: name,
+      img: imageUrl,
+      price: price,
+      count: 1,
+      size: selectSize,
+    };
+
+    let findPizza = cartList.findIndex(
+      (fn) => fn.name == name && fn.size == selectSize
+    );
+
+    if (findPizza >= 0) {
+      cartList[findPizza].count++;
+      cart.set([...cartList]);
+    } else {
+      cart.set([...cartList, newPizza]);
+    }
+
+    localStorage.setItem("pizzaCart", JSON.stringify(cartList));
+  }
 
   onMount(function () {
     if (typeof sizes[0] == "object") {
@@ -28,11 +60,13 @@
   <div class="name">{name}</div>
 
   {#if formatedSize.length > 0}
-    <PizzaSizeSelector size={formatedSize} />
+    <PizzaSizeSelector size={formatedSize} bind:selectedValue={selectSize} />
   {/if}
 
   <div class="price-block">
     <div class="price">від {price} грн</div>
-    <button class="button pizza" type="button">+ Додати</button>
+    <div class="button" on:click={buyPizza}>
+      <div class="button pizza">Додати</div>
+    </div>
   </div>
 </div>
